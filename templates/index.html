@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sugar & BP Checker</title>
+</head>
+<body>
+    <h2>Enter Your Health Details</h2>
+    <form action="/result" method="post">
+        <label>Fasting Blood Sugar (mg/dL):</label><br>
+        <input type="number" name="sugar" step="0.1" required><br><br>
+        
+        <label>Systolic BP (mm Hg):</label><br>
+        <input type="number" name="systolic" required><br><br>
+
+        <label>Diastolic BP (mm Hg):</label><br>
+        <input type="number" name="diastolic" required><br><br>
+
+        <input type="submit" value="Check">
+    </form>
+
+    {% if sugar_status %}
+        <h3>Sugar Level: {{ sugar_status }}</h3>
+        <h3>BP Status: {{ bp_status }}</h3>
+    {% endif %}
+</body>
+</html>
